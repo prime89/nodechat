@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+    <div class="header">
+        <div class="outroom">退出房间</div>
+    </div>
+    <div class="body">
+        <div class="lefter userContainer">
+            <div class="userItem">
+
+            </div>
+        </div>
+        <div class="content">
+            <div class="tipsbar"></div>
+            <div class="msgContainer"></div>
+            <div class="cfgBar"></div>
+            <div class="inputContainer">
+                <textarea name="" id="msgInputArea" cols="30" rows="10"></textarea>
+                <div class="btn sendBtn">发送</div>
+            </div>
+        </div>
+        <div class="righter"></div>
+    </div>
+    <div class="footer"></div>
+    <script src="/javascripts/lib/sea-debug.js"></script>
+    <script>
+        seajs.config({
+            base: '/javascripts',
+            alias: {
+                'jquery': 'lib/jquery.1.11.2.js',
+                'jqueryUI': 'lib/jqueryUI/jquery-ui.js'
+            }
+        });
+        seajs.use(['./javascripts/room'],function(room) {
+            room.init('<%= name%>');
+        });
+
+    </script>
+</body>
+</html>

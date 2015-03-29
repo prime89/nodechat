@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="/javascripts/lib/jqueryUI/jquery-ui.min.css"/>
+  </head>
+  <body>
+    <div class="header"></div>
+    <div class="body">
+      <div class="roomBox" id="addRoomBox">
+        <div class="addImg" id="action_addRoom">
+          <svg width="100%" height="100%" version="1.1"
+               xmlns="http://www.w3.org/2000/svg">
+
+            <polygon points="20,50 50,50 50,20 70,20 70,50 100,50 100,70 70,70 70,100 50,100 50,70 20,70"
+                     style="fill:#cccccc;stroke:#cccccc;stroke-width:0"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="footer"></div>
+
+    <div id="dia_addRoom" style="display: none;">
+      <div class="dia_content">
+        请输入房间名：
+        <input type="text" name="room" id="roomName"/>
+      </div>
+    </div>
+    <script src="/javascripts/lib/sea-debug.js"></script>
+    <script>
+      seajs.config({
+        base: '/javascripts',
+        alias: {
+          'jquery': 'lib/jquery.1.11.2.js',
+          'jqueryUI': 'lib/jqueryUI/jquery-ui.js'
+        }
+      });
+      seajs.use(['./javascripts/room','./javascripts/houseInit'],function(room) {
+        room.addRoom();
+      });
+
+    </script>
+  </body>
+</html>
